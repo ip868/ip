@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代理 IP 平台导航 - 国内主流代理 IP 服务平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --success-color: #4ade80;
+            --warning-color: #fbbf24;
+            --danger-color: #f87171;
+            --info-color: #60a5fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .header .contact-info {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-tab {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-tab:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .nav-tab.active {
+            background: white;
+            color: #667eea;
+            border-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Platform Cards Grid */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .platform-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .platform-card h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .platform-card .price-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .platform-card .features {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .platform-card .features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .platform-card .features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .platform-card .btn-visit {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .platform-card .btn-visit:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Category Section */
+        .category-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-section h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .category-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .category-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .category-item h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .category-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .footer .warning {
+            background: rgba(251, 191, 36, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid var(--warning-color);
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .platforms-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-tabs {
+                justify-content: flex-start;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .platform-card {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🌐 代理 IP 平台导航</h1>
+            <p class="subtitle">国内主流代理 IP 服务平台 - 稳定·正规·高性价比</p>
+            <div class="contact-info">
+                📞 联系 QQ：2284069503 / 3831729631 | 微信：ip456228
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-category="all">全部平台</div>
+            <div class="nav-tab" data-category="domestic">国内长效静态</div>
+            <div class="nav-tab" data-category="residential">住宅 IP</div>
+            <div class="nav-tab" data-category="high-traffic">大流量/大带宽</div>
+            <div class="nav-tab" data-category="l2">L2 协议 (软路由)</div>
+            <div class="nav-tab" data-category="overseas">海外代理</div>
+        </div>
+
+        <!-- Platforms Grid -->
+        <div class="platforms-grid">
+            <!-- 天行平台 -->
+            <div class="platform-card" data-category="domestic">
+                <h3>☁️ 天行平台</h3>
+                <div class="price-tag">💰 6 元/月/条</div>
+                <ul class="features">
+                    <li>国内 IP 池大，长效静态 IP 稳定</li>
+                    <li>家宽 IP 和 IDC 各占 50%</li>
+                    <li>支持 SOCK5 和 L2 协议</li>
+                    <li>住宅 IP：6-9 元/月/条</li>
+                    <li>免费测试，免费调换 IP</li>
+                    <li>适用于电商、游戏、社媒等全场景</li>
+                </ul>
+                <a href="http://www.tianxingip.com/proxy/index/index/code/ip456228/p/2196.html" class="btn-visit" target="_blank">🚀 立即访问</a>
+            </div>
+
+            <!-- 奔富平台 -->
+            <div class="platform-card" data-category="residential">
+                <h3>🏠 奔富平台</h3>
+                <div class="price-tag">💰 2 元/月起</div>
+                <ul class="features">
+                    <li>纯住宅 IP，纯净度高</li>
+                    <li>支持 SOCK5/L2/软路由等多种协议</li>
+                    <li>带宽可选，性价比高</li>
+                    <li>G 节点为住宅 IP</li>
+                    <li>特价价格 2 元/条/月</li>
+                    <li>适用于国内绝大部分业务</li>
+                </ul>
+                <a href="https://user.benfuip.com/main/register?aff=ip455228" class="btn-visit" target="_blank">🚀 立即访问</a>
+            </div>
+
+            <!-- 优众平台 -->
+            <div class="platform-card" data-category="domestic">
+                <h3>⭐ 优众平台</h3>
+                <div class="price-tag">💰 超低折扣价</div>
+                <ul class="features">
+                    <li>一手资源，超低价格</li>
+                    <li>支持 SOCK5 和 L2 协议</li>
+                    <li>L2 支持稳定大流量业务</li>
+                    <li>电信 B 区和 C 区大流量套餐</li>
+                    <li>有家宽住宅 IP 和云 IP</li>
+                    <li>支持免费调换</li>
+                </ul>
+                <a href="https://sk5ip.cn/views/login.html#?promotionCode=993CC35598B543A4B8974B12A28BDF67" class="btn-visit" target="_blank">🚀 立即访问</a>
+            </div>
+
+            <!-- 鲸云平台 -->
+            <div class="platform-card" data-category="high-traffic">
+                <h3>🐋 鲸云平台</h3>
+                <div class="price-tag">💰 20-30 元/条</div>
+                <ul class="features">
+                    <li>大流量套餐网络好，不限速</li>
+                    <li>定制 A 区：50-200M 带宽</li>
+                    <li>定制 B 区：10-20M 带宽</li>
+                    <li>家庭 B 区住宅 IP 反馈好</li>
+                    <li>国内为数不多的大带宽 IP</li>
+                    <li>绝对一手资源</li>
+                </ul>
+                <a href="https://console.51tcp.com/auth/register?i=syds" class="btn-visit" target="_blank">🚀 立即访问</a>
+            </div>
+
+            <!-- 沧海 IP -->
+            <div class="platform-card" data-category="domestic">
+                <h3>🌊 沧海 IP</h3>
+                <div class="price-tag">💰 性价比高</div>
+                <ul class="features">
+                    <li>一区、三区、四区、六区反馈好</li>
+                    <li>根据带宽选择不同区域</li>
+                    <li>支持免费测试</li>
+                    <li>支持免费调换</li>
+                    <li>操作简单，快速上手</li>
+                    <li>覆盖全产业业务</li>
+                </ul>
+                <a href="http://www.canghaiip.com/#/register?invitation=adminip&shareid=1697" class="btn-visit" target="_blank">🚀 立即访问</a>
+            </div>
+
+            <!-- 极云 IP -->
+            <div class="platform-card" data-category="domestic">
+                <h3>⚡ 极云 IP</h3>
+                <div class="price-tag">💰 性价比高</div>
+                <ul class="features">
+                    <li>长效静态及定制专享 IP</li>
+                    <li>支持免费测试和调换</li>
+                    <li>静态节点和住宅节点分开</li>
+                    <li>覆盖全行业场景</li>
+                    <li>性价比超高</li>
+                    <li>大小流量都能满足</li>
+                </ul>
+                <a href="http://www.jiyunip.com/login/index/index/code/5589/b/247.html" class="btn-visit" target="_blank">🚀 立即访问</a>
+            </div>
+
+            <!-- 无双平台 -->
+            <div class="platform-card" data-category="overseas">
+                <h3>🌍 无双平台</h3>
+                <div class="price-tag">💰 云 IP 7 元/住宅 15 元</div>
+                <ul class="features">
+                    <li>主做海外代理 IP</li>
+                    <li>云 IP 和住宅代理均有</li>
+                    <li>价格全网最低</li>
+                    <li>覆盖海外社媒、电商、web3、游戏等</li>
+                    <li>支持免费测试和调换</li>
+                    <li>性价比非常高</li>
+                </ul>
+                <a href="https://easybr.6nn.net/" class="btn-visit" target="_blank">🚀 立即访问</a>
+            </div>
+
+            <!-- 55 游 -->
+            <div class="platform-card" data-category="overseas">
+                <h3>🎮 55 游</h3>
+                <div class="price-tag">💰 高质量游戏 IP</div>
+                <ul class="features">
+                    <li>全网第一家游戏 IP 真隔离</li>
+                    <li>支持原生住宅（双 ISP）</li>
+                    <li>原生 IP（本土 IP）</li>
+                    <li>云服务器（云 IP）</li>
+                    <li>独家中转平台</li>
+                    <li>转发系统免费使用</li>
+                </ul>
+                <a href="https://55u.net/#/login?c=1234" class="btn-visit" target="_blank">🚀 立即访问</a>
+            </div>
+        </div>
+
+        <!-- Category Guide -->
+        <div class="category-section">
+            <h2>📋 按业务类型选择指南</h2>
+            <div class="category-content">
+                <div class="category-item">
+                    <h4>🔹 长效静态 IP</h4>
+                    <p><strong>推荐平台：</strong>天行、沧海、优众、极云</p>
+                    <p><strong>特点：</strong>稳定不跳，长期在线，IDC 和家宽 IP 各占 50%，适用于电商、游戏、社媒、广告等全场景</p>
+                    <p><strong>价格：</strong>6 元/月/条（半价优惠）</p>
+                </div>
+
+                <div class="category-item">
+                    <h4>🏠 住宅 IP</h4>
+                    <p><strong>推荐平台：</strong>奔富、鲸云、天行、沧海、极云</p>
+                    <p><strong>特点：</strong>纯住宅 IP，纯净度高，带宽可选</p>
+                    <p><strong>价格：</strong>2-9 元/月/条</p>
+                </div>
+
+                <div class="category-item">
+                    <h4>⚡ 大流量/大带宽</h4>
+                    <p><strong>推荐平台：</strong>鲸云（定制 A/B 区）、极云（定制版）</p>
+                    <p><strong>特点：</strong>超高纯净度，不限速，视频直播均可</p>
+                    <p><strong>价格：</strong>定制 A 区 30 元/条，B 区 20 元/条（需联系客服改价）</p>
+                </div>
+
+                <div class="category-item">
+                    <h4>🔌 L2 协议（软路由）</h4>
+                    <p><strong>推荐平台：</strong>奔富、优众、沧海、天行</p>
+                    <p><strong>特点：</strong>支持软路由，带宽可选，大流量套餐</p>
+                    <p><strong>价格：</strong>根据带宽需求选择</p>
+                </div>
+
+                <div class="category-item">
+                    <h4>🌏 海外代理 IP</h4>
+                    <p><strong>推荐平台：</strong>无双、55 游</p>
+                    <p><strong>特点：</strong>覆盖海外社媒、电商、web3、游戏、广告等全行业</p>
+                    <p><strong>价格：</strong>云 IP 7 元/条，住宅 15 元/条</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="category-section">
+            <h2>⚠️ 重要提示</h2>
+            <div class="category-content">
+                <div class="category-item" style="border-left-color: var(--warning-color);">
+                    <h4>🔒 注册注意事项</h4>
+                    <p>以下所有平台注册登录后<strong>不要更改邀请人信息和推荐人 ID</strong>，涉及到开通免费测试权限、更改超低价格、开通代理平台以及更多优惠政策等。</p>
+                </div>
+
+                <div class="category-item" style="border-left-color: var(--success-color);">
+                    <h4>✅ 免费测试政策</h4>
+                    <p>以下所有平台均支持<strong>免费测试，免费调换</strong>，不满意可以直接在平台上操作切换 IP，性价比超高。建议先测试再购买。</p>
+                </div>
+
+                <div class="category-item" style="border-left-color: var(--info-color);">
+                    <h4>💼 代理合作</h4>
+                    <p>以下平台都是绝对的一手资源，同时广招代理商。有兴趣做代理的可通过 QQ 或公众号联系，能给到极低价格，自主提现，利润可观。</p>
+                </div>
+
+                <div class="category-item" style="border-left-color: var(--danger-color);">
+                    <h4>⚖️ 合法合规使用</h4>
+                    <p>请大家<strong>合法合规使用</strong>，严禁用于任何非法用途。希望对大家有所帮助。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p> 联系方式：QQ 2284069503 / 3831729631 | 微信公众号：ip456228</p>
+            <p>💰 所有平台均享有折扣价格，量大可联系客服改价</p>
+            <p>🎯 诚信合作，永不失联</p>
+            <div class="warning">
+                ⚠️ 友情提示：请合法合规使用代理服务，严禁用于任何非法用途
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab filtering functionality
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                const category = this.dataset.category;
+                
+                // Filter platform cards
+                document.querySelectorAll('.platform-card').forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
