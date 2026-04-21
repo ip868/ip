@@ -453,6 +453,49 @@
             border: 2px solid #e9ecef;
         }
 
+        /* Floating Menu */
+        .floating-menu {
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .floating-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .floating-menu li {
+            margin-bottom: 15px;
+        }
+
+        .floating-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .floating-menu a:hover {
+            transform: translateX(-10px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -481,6 +524,19 @@
 
         .back-to-top.show {
             display: flex;
+        }
+
+        /* Responsive for floating menu */
+        @media (max-width: 768px) {
+            .floating-menu {
+                right: 15px;
+                padding: 10px;
+            }
+            
+            .floating-menu a {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
         }
 
         .tutorial-image-caption {
@@ -551,7 +607,7 @@
 <body>
     <div class="container">
         <!-- Header -->
-        <div class="header">
+        <div class="header" id="home">
             <h1>🌐 代理 IP 平台导航</h1>
             <p class="subtitle">国内主流代理 IP 服务平台 - 稳定·正规·高性价比</p>
             <div class="contact-info">
@@ -602,7 +658,7 @@
         </div>
 
         <!-- Platforms Grid -->
-        <div class="platforms-grid">
+        <div class="platforms-grid" id="platforms">
             <!-- 天行 IP -->
             <div class="platform-card" data-category="all domestic">
                 <h3>☁️ 天行 IP</h3>
@@ -860,7 +916,7 @@
         </div>
 
         <!-- Detailed Tutorials -->
-        <div class="platform-card tutorials-summary" data-category="tutorials-summary">
+        <div class="platform-card tutorials-summary" data-category="tutorials-summary" id="tutorials">
             <h2>📚 各平台使用详细教程</h2>
             <div class="category-content">
                 <div class="tutorial-warning">
@@ -1191,7 +1247,7 @@
         </div>
 
         <!-- Footer -->
-        <div class="footer">
+        <div class="footer" id="contact">
             <p> 联系方式：QQ 2284069503 / 3831729631 | 微信公众号：ip456228</p>
             <p>💰 所有平台均享有折扣价格，量大可联系客服改价</p>
             <p>🎯 诚信合作，永不失联</p>
@@ -1254,8 +1310,18 @@
         });
     </script>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" id="backToTop" title="返回顶部">↑</a>
+    <!-- Floating Menu -->
+        <div class="floating-menu">
+            <ul>
+                <li><a href="#home">🏠 首页</a></li>
+                <li><a href="#platforms">📋 平台导航</a></li>
+                <li><a href="#tutorials">📚 教程中心</a></li>
+                <li><a href="#contact">💬 联系我们</a></li>
+            </ul>
+        </div>
+
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top" id="backToTop" title="返回顶部">↑</a>
 
     <script>
         // Back to top button functionality
@@ -1276,6 +1342,22 @@
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scroll for floating menu links
+        document.querySelectorAll('.floating-menu a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
