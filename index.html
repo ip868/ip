@@ -69,6 +69,68 @@
             margin-top: 15px;
         }
 
+        /* Introduction Section */
+        .intro-section {
+            background: linear-gradient(135deg, #fff5f5 0%, #f0f9ff 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .intro-section h3 {
+            color: #667eea;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .intro-section .intro-content {
+            color: #444;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .intro-section .intro-content p {
+            margin-bottom: 15px;
+        }
+
+        .intro-section .highlight {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #f59e0b;
+            margin: 20px 0;
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        .intro-section .platforms-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .intro-section .platform-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .intro-section .platform-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
         /* Navigation Tabs */
         .nav-tabs {
             display: flex;
@@ -229,6 +291,179 @@
             line-height: 1.6;
         }
 
+        /* Tutorial Section Styles */
+        .tutorial-warning {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+            border-left: 4px solid var(--warning-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tutorial-warning p {
+            color: #856404;
+            font-size: 1.05rem;
+            margin: 0;
+        }
+
+        .tutorial-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        .tutorial-item h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .tutorial-item h4 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tutorial-item p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .tutorial-item ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .tutorial-item ol li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .tutorial-item ul {
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .tutorial-item ul li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .price-info {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .ip-type {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .link {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            margin: 10px 0;
+        }
+
+        .link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            word-break: break-all;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+
+        .warning-text {
+            background: #ffe6e6;
+            color: #c0392b;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #c0392b;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .note {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #2e7d32;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .tutorial-summary {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid var(--primary-color);
+            margin-top: 30px;
+        }
+
+        .tutorial-summary h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .tutorial-summary p {
+            margin-bottom: 12px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .tutorial-image {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .tutorial-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e9ecef;
+        }
+
+        .tutorial-image-caption {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .category-content:has(.tutorial-item) {
+            display: block;
+        }
+
         /* Footer */
         .footer {
             background: rgba(0, 0, 0, 0.2);
@@ -290,89 +525,124 @@
             <h1>🌐 代理 IP 平台导航</h1>
             <p class="subtitle">国内主流代理 IP 服务平台 - 稳定·正规·高性价比</p>
             <div class="contact-info">
-                📞 联系 QQ：2284069503 / 3831729631 | 微信：ip456228
+                📞 联系 QQ：2284069503 / 3831729631 | 微信公众号：ip456228
+            </div>
+        </div>
+
+        <!-- Introduction Section -->
+        <div class="intro-section">
+            <h3>📖 平台介绍</h3>
+            <div class="intro-content">
+                <p>以下是<strong>天行、鲸云、奔富、jiuip、沧海、优众、极云、无双、55 游、985 海外代理</strong>等十个 IP 代理平台的使用教程及平台介绍，大家根据自己的使用场景，匹配相对应的资源。</p>
+                
+                <div class="highlight">
+                    ✨ 此十个平台均为国内主流的大平台，长久、稳定且正规，性价比及稳定性均不错，价格均为行业低价。而且量大均有超低折扣（以下超低价格基础上再下调）。
+                </div>
+
+                <p><strong>十大主流 IP：</strong></p>
+                <div class="platforms-list">
+                    <div class="platform-tag">☁️ 天行 IP</div>
+                    <div class="platform-tag">🐋 鲸云 IP</div>
+                    <div class="platform-tag">🏠 奔富 IP</div>
+                    <div class="platform-tag">🔥 jiuip</div>
+                    <div class="platform-tag">🌊 沧海 IP</div>
+                    <div class="platform-tag">⭐ 优众 IP</div>
+                    <div class="platform-tag">⚡ 极云 IP</div>
+                    <div class="platform-tag">🌍 无双 IP</div>
+                    <div class="platform-tag">🎮 55 游 IP</div>
+                    <div class="platform-tag">🎓 985 海外代理 IP</div>
+                </div>
+
+                <p style="margin-top: 20px; text-align: center; font-size: 1.1rem; color: #667eea;">
+                    🎯 以上平台均为行业大平台，且覆盖了全行业场景，如何结合业务选择，博主在结合业务类型栏有提供相关建议，供大家参考<br>
+                    <strong>（平台可以免费测试，以测试结果为准）</strong>
+                </p>
             </div>
         </div>
 
         <!-- Navigation Tabs -->
         <div class="nav-tabs">
             <div class="nav-tab active" data-category="all">全部平台</div>
-            <div class="nav-tab" data-category="domestic">国内长效静态</div>
-            <div class="nav-tab" data-category="residential">住宅 IP</div>
-            <div class="nav-tab" data-category="high-traffic">大流量/大带宽</div>
-            <div class="nav-tab" data-category="l2">L2 协议 (软路由)</div>
+            <div class="nav-tab" data-category="domestic">国内长效静态 IP</div>
+            <div class="nav-tab" data-category="residential">家庭住宅 IP</div>
+            <div class="nav-tab" data-category="high-traffic">大流量超高带宽 IP</div>
+            <div class="nav-tab" data-category="l2">L2tp 协议 IP</div>
             <div class="nav-tab" data-category="overseas">海外代理</div>
+            <div class="nav-tab" data-category="tutorials">各平台使用详细教程</div>
         </div>
 
         <!-- Platforms Grid -->
         <div class="platforms-grid">
-            <!-- 天行平台 -->
-            <div class="platform-card" data-category="domestic">
-                <h3>☁️ 天行平台</h3>
-                <div class="price-tag">💰 6 元/月/条</div>
+            <!-- 天行 IP -->
+            <div class="platform-card" data-category="all domestic">
+                <h3>☁️ 天行 IP</h3>
+                <div class="price-tag">💰 线上价 15 元/月/条，渠道折后价 4 折起售 6 元/月/条</div>
                 <ul class="features">
-                    <li>国内 IP 池大，长效静态 IP 稳定</li>
-                    <li>家宽 IP 和 IDC 各占 50%</li>
+                    <li>国内 IP 池大，地区多，数量大</li>
+                    <li>长效静态 IP 以家庭宽带 IP 为主，IP 稳定且纯净度不错</li>
                     <li>支持 SOCK5 和 L2 协议</li>
-                    <li>住宅 IP：6-9 元/月/条</li>
+                    <li>住宅 IP：6-9 元/月/条，J 节点带宽及价格大于 N 节点</li>
                     <li>免费测试，免费调换 IP</li>
                     <li>适用于电商、游戏、社媒等全场景</li>
                 </ul>
                 <a href="http://www.tianxingip.com/proxy/index/index/code/ip456228/p/2196.html" class="btn-visit" target="_blank">🚀 立即访问</a>
             </div>
 
-            <!-- 奔富平台 -->
-            <div class="platform-card" data-category="residential">
-                <h3>🏠 奔富平台</h3>
-                <div class="price-tag">💰 2 元/月起</div>
+            <!-- 鲸云 IP -->
+            <div class="platform-card" data-category="all high-traffic">
+                <h3>🐋 鲸云 IP</h3>
+                <div class="price-tag">💰 家庭住宅 6 元/条，超高带宽定制住宅 IP 18-30 元/条</div>
+                <ul class="features">
+                    <li>住宅 A/B 区为低带宽住宅 IP</li>
+                    <li>定制 A/B 区套餐网络较好，网速还不错</li>
+                    <li>定制 A 区：50-200M 带宽</li>
+                    <li>定制 B 区：10-20M 带宽</li>
+                    <li>家庭 B 区住宅 IP 用户反馈好且能做到 PC 与手机 IP 保持一致</li>
+                    <li>定制 A/B 区为国内为数不多的大带宽 SOCK5 协议的 IP</li>
+                    <li>线上价贵，注册后需联系博主改低价</li>
+                </ul>
+                <a href="https://console.51tcp.com/auth/register?i=syds" class="btn-visit" target="_blank">🚀 立即访问</a>
+            </div>
+
+            <!-- 奔富 IP -->
+            <div class="platform-card" data-category="all residential">
+                <h3>🏠 奔富 IP</h3>
+                <div class="price-tag">💰 纯住宅 IP，最低 2 元/条/月起</div>
                 <ul class="features">
                     <li>纯住宅 IP，纯净度高</li>
                     <li>支持 SOCK5/L2/软路由等多种协议</li>
                     <li>带宽可选，性价比高</li>
                     <li>G 节点为住宅 IP</li>
                     <li>特价价格 2 元/条/月</li>
-                    <li>适用于国内绝大部分业务</li>
+                    <li>所有 IP 9 折起售</li>
+                    <li>根据业务匹配相应带宽的 IP 国内所有场景全覆盖</li>
                 </ul>
                 <a href="https://user.benfuip.com/main/register?aff=ip455228" class="btn-visit" target="_blank">🚀 立即访问</a>
             </div>
 
-            <!-- 优众平台 -->
-            <div class="platform-card" data-category="domestic">
-                <h3>⭐ 优众平台</h3>
-                <div class="price-tag">💰 超低折扣价</div>
+            <!-- jiuip -->
+            <div class="platform-card" data-category="all domestic">
+                <h3>🔥 jiuip</h3>
+                <div class="price-tag">💰 全新平台 全新 IP 超高纯净度住宅 IP 超低价格 3 元/月</div>
                 <ul class="features">
-                    <li>一手资源，超低价格</li>
-                    <li>支持 SOCK5 和 L2 协议</li>
-                    <li>L2 支持稳定大流量业务</li>
-                    <li>电信 B 区和 C 区大流量套餐</li>
-                    <li>有家宽住宅 IP 和云 IP</li>
-                    <li>支持免费调换</li>
+                    <li>全新平台 全新 IP 超高性价比</li>
+                    <li>用户实测视频等大流量业务相对流畅（匹配相应带宽）</li>
+                    <li>支持 sock5/L2tp 等多种协议</li>
+                    <li>天翼云 移动云 阿里云 住宅 IP 等</li>
+                    <li>自选带宽 免费测试</li>
+                    <li>全新平台 IP 池数量持续更新中</li>
                 </ul>
-                <a href="https://sk5ip.cn/views/login.html#?promotionCode=993CC35598B543A4B8974B12A28BDF67" class="btn-visit" target="_blank">🚀 立即访问</a>
-            </div>
-
-            <!-- 鲸云平台 -->
-            <div class="platform-card" data-category="high-traffic">
-                <h3>🐋 鲸云平台</h3>
-                <div class="price-tag">💰 20-30 元/条</div>
-                <ul class="features">
-                    <li>大流量套餐网络好，不限速</li>
-                    <li>定制 A 区：50-200M 带宽</li>
-                    <li>定制 B 区：10-20M 带宽</li>
-                    <li>家庭 B 区住宅 IP 反馈好</li>
-                    <li>国内为数不多的大带宽 IP</li>
-                    <li>绝对一手资源</li>
-                </ul>
-                <a href="https://console.51tcp.com/auth/register?i=syds" class="btn-visit" target="_blank">🚀 立即访问</a>
+                <a href="#" class="btn-visit" target="_blank">🚀 立即访问</a>
             </div>
 
             <!-- 沧海 IP -->
-            <div class="platform-card" data-category="domestic">
+            <div class="platform-card" data-category="all domestic l2">
                 <h3>🌊 沧海 IP</h3>
-                <div class="price-tag">💰 性价比高</div>
+                <div class="price-tag">💰 高性价比 带宽可选 超低价格</div>
                 <ul class="features">
-                    <li>一区、三区、四区、六区反馈好</li>
-                    <li>根据带宽选择不同区域</li>
+                    <li>一区、三区、四区、六区用户反馈好</li>
+                    <li>支持 sock5 与 L2tp 等协议</li>
+                    <li>根据带宽选择不同 IP 区</li>
                     <li>支持免费测试</li>
                     <li>支持免费调换</li>
                     <li>操作简单，快速上手</li>
@@ -381,89 +651,485 @@
                 <a href="http://www.canghaiip.com/#/register?invitation=adminip&shareid=1697" class="btn-visit" target="_blank">🚀 立即访问</a>
             </div>
 
-            <!-- 极云 IP -->
-            <div class="platform-card" data-category="domestic">
-                <h3>⚡ 极云 IP</h3>
-                <div class="price-tag">💰 性价比高</div>
+            <!-- 优众 IP -->
+            <div class="platform-card" data-category="all domestic">
+                <h3>⭐ 优众 IP</h3>
+                <div class="price-tag">💰 超低价格 6 元/月/条起售</div>
                 <ul class="features">
-                    <li>长效静态及定制专享 IP</li>
+                    <li>支持长效静态 SOCK5 和 L2tp 协议</li>
+                    <li>L2tp 支持稳定大带宽业务（电信 B 区及 C 区）</li>
+                    <li>SOCK5/HTTP 有腾讯云专区及电信区</li>
+                    <li>IP 以家庭宽带为主</li>
+                    <li>免费调换，免费调换</li>
+                </ul>
+                <a href="https://sk5ip.cn/views/login.html#?promotionCode=993CC35598B543A4B8974B12A28BDF67" class="btn-visit" target="_blank">🚀 立即访问</a>
+            </div>
+
+            <!-- 极云 IP -->
+            <div class="platform-card" data-category="all domestic">
+                <h3>⚡ 极云 IP</h3>
+                <div class="price-tag">💰 长效静态 住宅 IP 6 元/月/条</div>
+                <ul class="features">
+                    <li>主要以 SOCK5 协议的长效静态及住宅 IP 为主</li>
+                    <li>静态 IP 以家庭宽带为主</li>
+                    <li>住宅 J 节点带宽大于 N 节点</li>
                     <li>支持免费测试和调换</li>
-                    <li>静态节点和住宅节点分开</li>
-                    <li>覆盖全行业场景</li>
-                    <li>性价比超高</li>
-                    <li>大小流量都能满足</li>
+                    <li>操作简单 覆盖全行业场景</li>
+                    <li>性价比还不错</li>
                 </ul>
                 <a href="http://www.jiyunip.com/login/index/index/code/5589/b/247.html" class="btn-visit" target="_blank">🚀 立即访问</a>
             </div>
 
-            <!-- 无双平台 -->
-            <div class="platform-card" data-category="overseas">
-                <h3>🌍 无双平台</h3>
+            <!-- 无双 IP -->
+            <div class="platform-card" data-category="all overseas">
+                <h3>� 无双 IP</h3>
                 <div class="price-tag">💰 云 IP 7 元/住宅 15 元</div>
                 <ul class="features">
                     <li>主做海外代理 IP</li>
                     <li>云 IP 和住宅代理均有</li>
                     <li>价格全网最低</li>
-                    <li>覆盖海外社媒、电商、web3、游戏等</li>
+                    <li>覆盖海外社媒、游戏、电商、web3 等场景</li>
                     <li>支持免费测试和调换</li>
                     <li>性价比非常高</li>
+                    <li>适合对 IP 纯净度要求一般但追求低价 IP 的业务</li>
                 </ul>
                 <a href="https://easybr.6nn.net/" class="btn-visit" target="_blank">🚀 立即访问</a>
             </div>
 
             <!-- 55 游 -->
-            <div class="platform-card" data-category="overseas">
-                <h3>🎮 55 游</h3>
-                <div class="price-tag">💰 高质量游戏 IP</div>
+            <div class="platform-card" data-category="all overseas">
+                <h3>🎮 55 游 [高质量游戏 IP]</h3>
+                <div class="price-tag">💰 原生住宅 24 元/条/月 原生 IP 12 元/条/月</div>
                 <ul class="features">
                     <li>全网第一家游戏 IP 真隔离</li>
+                    <li>价格比无双平台贵一些，但 IP 质量相对好一点</li>
                     <li>支持原生住宅（双 ISP）</li>
                     <li>原生 IP（本土 IP）</li>
                     <li>云服务器（云 IP）</li>
                     <li>独家中转平台</li>
                     <li>转发系统免费使用</li>
+                    <li>地区自选 免费测试 免费调换</li>
                 </ul>
                 <a href="https://55u.net/#/login?c=1234" class="btn-visit" target="_blank">🚀 立即访问</a>
+            </div>
+
+            <!-- 985 海外代理 IP -->
+            <div class="platform-card" data-category="all overseas">
+                <h3>🎓 985 海外代理</h3>
+                <div class="price-tag">💰 原生住宅直连 IP（超高纯净度）联系博主享受超低折扣价</div>
+                <ul class="features">
+                    <li>原生住宅直连 IP（超高纯净度）</li>
+                    <li>专注海外电商、社媒、广告、web3 等场景</li>
+                    <li>超高纯净度、质量有保障</li>
+                    <li>线上价偏贵 联系博主享受超低折扣价</li>
+                    <li>登录网址 自选地区 联系博主购买</li>
+                    <li>适合对 IP 质量要求非常高的海外业务</li>
+                </ul>
+                <a href="https://www.985proxy.com/?QYMWI5" class="btn-visit" target="_blank">🚀 立即访问</a>
+            </div>
+
+            <!-- 国内长效静态 IP 汇总卡片 -->
+            <div class="platform-card" data-category="domestic-summary">
+                <h3>☁️ 国内长效静态 IP</h3>
+                <div class="price-tag">💰 渠道价 6 元/月/条</div>
+                <ul class="features">
+                    <li>价格：渠道价 6 元/月/条</li>
+                    <li>IP 特点：家庭宽带 IP 及云 IP 为主（绝大部分 IP 均比较干净，纯净度都很不错，纯净度可检测，不满意直接平台内免费调换）</li>
+                    <li>IP 较稳定，不跳 长期保持不变</li>
+                    <li>带宽适中，长期使用大流量大带宽业务可能会有限速</li>
+                    <li>性价比高 适合电商、游戏、社媒、广告等全场景</li>
+                    <li>平台可选：天行、沧海（1 区 sock5 协议、6 区 L2 协议）、优众、jiuip 等</li>
+                </ul>
+            </div>
+
+            <!-- 家庭住宅 IP 汇总卡片 -->
+            <div class="platform-card" data-category="residential-summary">
+                <h3>🏠 国内家庭住宅 IP</h3>
+                <div class="price-tag">💰 纯住宅 IP，最低 2 元/条/月起</div>
+                <ul class="features">
+                    <li>价格：自选带宽，按带宽高低价格有差异，最低 2 元/条</li>
+                    <li>IP 特点：纯住宅 IP，纯净度高，模拟家庭真实网络最接近</li>
+                    <li>部分住宅 IP 可能会跳，但一般只是小区域内跳动，属正常现象</li>
+                    <li>根据业务需求，自选带宽，国内所有场景全覆盖</li>
+                    <li>可选平台：<br>天行（J、N 节点，带宽 J 节点高于 N 节点）<br>沧海（3、4、7 区）<br>鲸云（家庭 A/B 区，定制 A/B 区）<br>奔富（所有 G 节点）<br>jiuip（住宅 IP，自选带宽）等</li>
+                </ul>
+            </div>
+
+            <!-- 大流量超高带宽 IP 汇总卡片 -->
+            <div class="platform-card" data-category="high-traffic-summary">
+                <h3>🐋 大流量超高带宽 IP</h3>
+                <div class="price-tag">💰 可视频等大流量业务，最低 8 元/月/条</div>
+                <ul class="features">
+                    <li>IP 特点：独享 IP 带宽高，网速相对较为流畅</li>
+                    <li>适合对 IP 网络网速要求比较高的业务场景</li>
+                    <li>价格各平台略有差异，最低 8 元/月/条</li>
+                    <li>可选平台：<br>鲸鱼定制 A/B 区（定制 A 区：50-200M 带宽，定制 B 区：10-20M 带宽）A 区为 socks5 协议，B 区支持 sock5 与 L2 双协议，此两区线上价高，注册后需联系博主改价，A 区 30/条，B 区 20/条，住宅 IP 网络还不错<br>jiuip：新平台网络较好，自选带宽，实测 5M 及以上视频类业务较为流畅，而且价格不贵，支持 socks5 与 L2 等协议<br>优众 L2 静态（电信 B/C 区）<br>天行、沧海、极云的住宅节点，J 节点带宽大于 N 节点，也有高带宽 L2 协议的 IP，大家可在平台内查看对应的介绍<br>奔富 20M 及视频大带宽等，支持 sock5 与 L2 等协议</li>
+                </ul>
+            </div>
+
+            <!-- L2tp 协议 IP 汇总卡片 -->
+            <div class="platform-card" data-category="l2-summary">
+                <h3>🌊 L2tp 协议 IP</h3>
+                <div class="price-tag">💰 结合软路由等工具使用</div>
+                <ul class="features">
+                    <li>基本上以上平台均支持 L2tp 协议的 IP</li>
+                    <li>大家根据自己带宽及网络的需求（静态/住宅/带宽高低等）自行查看对应平台</li>
+                    <li>可选平台：奔富 L2、天行 L2、鲸云 B 区、jiuip、优众 L2、沧海 6/7 区等</li>
+                    <li>另若有微信、QQ 等社交类场景或需微信 QQ 登陆类场景，因运营商审核较为严格，且对 IP 要求比较高，博主单列了动感网络 IP 平台，网络和纯净度均不错，供大家使用，注册后联系博主更改低价。</li>
+                </ul>
+                <a href="https://dgip.dgip666.com/i/620381" class="btn-visit" target="_blank">🚀 立即访问</a>
             </div>
         </div>
 
         <!-- Category Guide -->
         <div class="category-section">
-            <h2>📋 按业务类型选择指南</h2>
+            <h2>📋 结合业务类型选择建议</h2>
             <div class="category-content">
                 <div class="category-item">
                     <h4>🔹 长效静态 IP</h4>
-                    <p><strong>推荐平台：</strong>天行、沧海、优众、极云</p>
-                    <p><strong>特点：</strong>稳定不跳，长期在线，IDC 和家宽 IP 各占 50%，适用于电商、游戏、社媒、广告等全场景</p>
-                    <p><strong>价格：</strong>6 元/月/条（半价优惠）</p>
+                    <p><strong>推荐平台：</strong>天行、沧海（1 区 sock5 协议、6 区 L2 协议）、优众、jiuip 等</p>
+                    <p><strong>价格：</strong>渠道价 6 元/月/条</p>
+                    <p><strong>IP 特点：</strong>家庭宽带 IP 及云 IP 为主（绝大部分 IP 均比较干净，纯净度都很不错，纯净度可检测，不满意直接平台内免费调换）</p>
+                    <p><strong>稳定性：</strong>IP 较稳定，不跳，长期保持不变</p>
+                    <p><strong>带宽：</strong>带宽适中，长期使用大流量大带宽业务可能会有限速</p>
+                    <p><strong>适用场景：</strong>性价比高，适合电商、游戏、社媒、广告等全场景</p>
                 </div>
 
                 <div class="category-item">
                     <h4>🏠 住宅 IP</h4>
-                    <p><strong>推荐平台：</strong>奔富、鲸云、天行、沧海、极云</p>
-                    <p><strong>特点：</strong>纯住宅 IP，纯净度高，带宽可选</p>
-                    <p><strong>价格：</strong>2-9 元/月/条</p>
+                    <p><strong>推荐平台：</strong>天行（J、N 节点，带宽 J 节点高于 N 节点）、沧海（3、4、7 区）、鲸云（家庭 A/B 区，定制 A/B 区）、奔富（所有 G 节点）、jiuip（住宅 IP，自选带宽）等</p>
+                    <p><strong>价格：</strong>自选带宽，按带宽高低价格有差异，最低 2 元/条</p>
+                    <p><strong>IP 特点：</strong>纯住宅 IP，纯净度高，模拟家庭真实网络最接近</p>
+                    <p><strong>稳定性：</strong>部分住宅 IP 可能会跳，但一般只是小区域内跳动，属正常现象</p>
+                    <p><strong>适用场景：</strong>根据业务需求，自选带宽，国内所有场景全覆盖</p>
                 </div>
 
                 <div class="category-item">
-                    <h4>⚡ 大流量/大带宽</h4>
-                    <p><strong>推荐平台：</strong>鲸云（定制 A/B 区）、极云（定制版）</p>
-                    <p><strong>特点：</strong>超高纯净度，不限速，视频直播均可</p>
-                    <p><strong>价格：</strong>定制 A 区 30 元/条，B 区 20 元/条（需联系客服改价）</p>
+                    <h4>⚡ 大流量超高带宽 IP</h4>
+                    <p><strong>推荐平台：</strong>鲸云定制 A/B 区（定制 A 区：50-200M 带宽，定制 B 区：10-20M 带宽）A 区为 socks5 协议，B 区支持 sock5 与 L2 双协议，此两区线上价高，注册后需联系博主改价，A 区 30/条，B 区 20/条，住宅 IP 网络还不错、jiuip（新平台网络较好，自选带宽，实测 5M 及以上视频类业务较为流畅，而且价格不贵，支持 socks5 与 L2 等协议）、优众 L2 静态（电信 B/C 区）、天行、沧海、极云的住宅节点（J 节点带宽大于 N 节点，也有高带宽 L2 协议的 IP，大家可在平台内查看对应的介绍）、奔富 20M 及视频大带宽等（支持 sock5 与 L2 等协议）</p>
+                    <p><strong>价格：</strong>各平台略有差异，最低 8 元/月/条</p>
+                    <p><strong>IP 特点：</strong>独享 IP 带宽高，网速相对较为流畅</p>
+                    <p><strong>适用场景：</strong>适合对 IP 网络网速要求比较高的业务场景</p>
                 </div>
 
                 <div class="category-item">
-                    <h4>🔌 L2 协议（软路由）</h4>
-                    <p><strong>推荐平台：</strong>奔富、优众、沧海、天行</p>
-                    <p><strong>特点：</strong>支持软路由，带宽可选，大流量套餐</p>
-                    <p><strong>价格：</strong>根据带宽需求选择</p>
+                    <h4>🔌 L2tp 协议 IP</h4>
+                    <p><strong>推荐平台：</strong>奔富 L2、天行 L2、鲸云 B 区、jiuip、优众 L2、沧海 6/7 区等</p>
+                    <p><strong>特点：</strong>基本上以上平台均支持 L2tp 协议的 IP，大家根据自己带宽及网络的需求（静态/住宅/带宽高低等）自行查看对应平台</p>
+                    <p><strong>特殊场景：</strong>另若有微信、QQ 等社交类场景或需微信 QQ 登陆类场景，因运营商审核较为严格，且对 IP 要求比较高，博主单列了动感网络 IP 平台，网络和纯净度均不错，供大家使用，注册后联系博主更改低价。</p>
+                    <p><strong>价格：</strong>结合软路由等工具使用，根据带宽需求选择</p>
                 </div>
 
                 <div class="category-item">
                     <h4>🌏 海外代理 IP</h4>
-                    <p><strong>推荐平台：</strong>无双、55 游</p>
+                    <p><strong>推荐平台：</strong>无双、55 游、985 海外代理</p>
                     <p><strong>特点：</strong>覆盖海外社媒、电商、web3、游戏、广告等全行业</p>
-                    <p><strong>价格：</strong>云 IP 7 元/条，住宅 15 元/条</p>
+                    <p><strong>价格：</strong>各平台价格不同，详情查看平台介绍</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Tutorials -->
+        <div class="platform-card tutorials-summary" data-category="tutorials-summary">
+            <h2>📚 各平台使用详细教程</h2>
+            <div class="category-content">
+                <div class="tutorial-warning">
+                    <p><strong>⚠️ 友情提示：</strong>以下注册网站登录后<strong>不要改邀请人信息和推荐人 ID</strong>，涉及到开通免费测试权限、更改超低价格、开通代理平台以及更多优惠政策等，请大家切记。</p>
+                </div>
+
+                <!-- 教程 1：天行平台 -->
+                <div class="tutorial-item">
+                    <h3>一、国内长效静态代理（天行平台）</h3>
+                    <p class="price-info"><strong>价格：</strong>6 元/条/月</p>
+                    <p class="ip-type"><strong>IP 类型：</strong>静态代理</p>
+                    
+                    <h4>🎯 平台特色</h4>
+                    <p>国内 IP 池子较大，长效静态 IP 比较稳定（家宽 IP，不跳），纯净度也不错，国内大部分业务可用，也有住宅 IP（6-9 元/条/月，sock5 跟 L2 协议均有），大家根据业务自行选择。若需长期占用大流量业务，可能会有限速，建议测试后再购买，下面几个平台也有专门做大流量的，都可以测试下。</p>
+                    
+                    <h4>🔗 登录网址</h4>
+                    <p class="warning-text"><strong>邀请人信息不要更改，默认即可，不然无法开通测试、更改低价以及更多优惠政策</strong></p>
+                    <p class="link"><a href="http://www.tianxingip.com/proxy/index/index/code/ip456228/p/2196.html" target="_blank">http://www.tianxingip.com/proxy/index/index/code/ip456228/p/2196.html</a></p>
+                    
+                    <h4>📝 使用流程</h4>
+                    <ol>
+                        <li><strong>注册登录：</strong>登录上述网址，平台注册并登录</li>
+                        <li><strong>选择节点：</strong>左边功能栏选择《长效静态 IP 购买》（或其他区，根据自己需求选择），然后选择《购买节点》，长效静态 IP 里面主要是家宽 IP 和 IDC，纯净度还不错，大家根据自己业务匹配是长效静态或者住宅。
+                            <div class="tutorial-image">
+                                <img src="images/1.png">
+                            </div>
+                        </li>
+                        <li><strong>搜索项目：</strong>根据自己的业务类型，搜索相应的项目（下图红框所示），搜索后选择项目即可，此处若无搜索结果，也可随机选择项目或者搜索类似项目均可，IP 是项目独享的，项目类型对 IP 使用没有影响。
+                            <div class="tutorial-image">
+                                <img src="images/2.png">
+                            </div>
+                        </li>
+                        <li><strong>选择地区和数量：</strong>搜索完成以后选择地区以及个数（下图红框所示），《自定义账号》和《端口选择》随机即可。然后点订单确认，即可完成 IP 购买。此处提示一个 IP 为 15 金币，1RMB 等于 2 点几金币，相当于一个 IP 六块钱。
+                            <div class="tutorial-image">
+                                <img src="images/3.png">
+                            </div>
+                        </li>
+                        <li><strong>平台充值：</strong>点击《金币信息》--《在线充值》<br/><strong>特别提示：</strong>《长效静态 IP 购买》栏 1RMB==2 点几金币，一个 IP 的价格是六块钱。
+                            <div class="tutorial-image">
+                                <img src="images/4.png">
+                            </div>
+                        </li>
+                        <li><strong>适用范围：</strong>电商、游戏、社媒、广告、自媒体等覆盖所有国内场景，适合图文及看视频类业务，若用户有超高带宽需求（如上传下载大流量），可能会有影响，有可能会有短暂限速，可免费更换 IP 改善网络或过一会网络自动恢复。（可结合业务免费测试 OK 后再付费）</li>
+                        <li><strong>免费测试：</strong>IP 支持免费测试，登录平台点击《购买节点》选择测试卡，自行测试，满意再购买。</li>
+                        <li><strong>续费及 IP 更换：</strong>该平台 IP 可免费更换（一个账户一个月有一定次数的 IP 更换权限，该更换次数无须申请，自动生效，且免费），续费等事宜也如下图所示：
+                            <div class="tutorial-image">
+                                <img src="images/5.png">
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- 教程 2：奔富平台 -->
+                <div class="tutorial-item">
+                    <h3>二、国内代理链接：奔富平台</h3>
+                    <p class="price-info"><strong>价格：</strong>自选带宽高低，打折出售，最低 2 元/条</p>
+                    
+                    <h4>🎯 平台特色</h4>
+                    <p>支持 sk5/L2/软路由等多种协议，带宽可选，性价比较高，纯住宅 IP，纯净度高。</p>
+                    
+                    <h4>🔗 登录网址</h4>
+                    <p class="link"><a href="https://user.benfuip.com/main/register?aff=ip455228" target="_blank">https://user.benfuip.com/main/register?aff=ip455228</a></p>
+                    <p class="note">若需代理，请联系博主。</p>
+                    
+                    <h4>📝 使用流程</h4>
+                    <ol>
+                        <li><strong>注册登录：</strong>注册、完善信息并登录（登录网址）--推荐人 ID 不要更改，默认即可
+                            <div class="tutorial-image">
+                                <img src="images/6.png">
+                            </div>
+                        </li>
+                        <li><strong>购买线路：</strong>左边功能栏--业务管理--购买线路</li>
+                        <li><strong>选择游戏：</strong>《选择游戏》处可搜索（游戏类别只做项目区分，选择对使用基本没影响），搜索后选择项目即可，此处若无搜索结果，也可随机选择项目或者搜索类似项目均可，大部分的项目 IP 均是通用的，没有影响。
+                            <div class="tutorial-image">
+                                <img src="images/7.png">
+                            </div>
+                        </li>
+                        <li><strong>选择带宽：</strong>用户根据带宽需求自行购买（若视频上传下载类的，建议选择最大带宽的，其余的根据测试的情况，自行选择带宽购买）</li>
+                        <li><strong>选择节点类型：</strong>选择带宽、类型、游戏后，点下一步，弹出选择框，大家根据自身业务需求，按照各节点解释购买即可。<strong>T 节点为机房 IP，G 节点为住宅 IP</strong>。
+                            <div class="tutorial-image">
+                                <img src="images/8.png">
+                            </div>
+                        </li>
+                        <li><strong>免费测试：</strong>特别注意，所有 IP 均免费测试，请根据业务需求，测试带宽 OK 后再购买。</li>
+                        <li><strong>适合行业：</strong>国内绝大部分业务均可做，若游戏视频长连接等大带宽业务，请选择对应高带宽套餐。</li>
+                        <li><strong>续费及 IP 更换：</strong>按照平台指引操作，浅显易懂，大家自行操作。
+                            <div class="tutorial-image">
+                                <img src="images/9.png">
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- 教程 3：鲸云平台 -->
+                <div class="tutorial-item">
+                    <h3>三、鲸云平台</h3>
+                    <p class="price-info"><strong>渠道价格：</strong>定制 A 区 30 元/条，B 区 20 元/条，家庭 A/B 区 6 元/条</p>
+                    <p class="note"><strong>大流量套餐网络较好，不限速，住宅代理（部分住宅可能会跳，部分不跳，用户自行测试）</strong></p>
+                    
+                    <h4>🔗 登录网址</h4>
+                    <p class="link"><a href="https://console.51tcp.com/auth/register?i=syds" target="_blank">https://console.51tcp.com/auth/register?i=syds</a></p>
+                    <p class="warning-text"><strong>注册须知：</strong>若用户之前注册或登陆过鲸云，重新注册须更换新的浏览器（如谷歌换 360 类似）注册，不然博主看不到注册信息，无法更改更低价格及提供更好政策服务。若之前未登陆注册及使用过，则无影响。</p>
+                    
+                    <h4>📝 使用流程</h4>
+                    <ol>
+                        <li><strong>注册并登录</strong>
+                            <div class="tutorial-image">
+                                <img src="images/10.png">
+                            </div>
+                        </li>
+                        <li><strong>选择套餐：</strong>国内为数不多的高流量、大带宽套餐（定制 A 区和定制 B 区），同时家庭 B 区（住宅 IP）近期用户反馈很不错，家庭 B 区 sock5 与 L2 能做到定位同步。<br/>
+                        定制 A/B 区大带宽基本不限速，A 区（50-200M）带宽大于 B 区（10-20M），同时此两区价格较贵，<strong>注册联系客服改价</strong>，线上价 A 区 100/条，博主这边渠道价 A 区 30/条，B 区 20/条。价格下浮空间不大。</li>
+                    </ol>
+                </div>
+
+                <!-- 教程 4：jiuip -->
+                <div class="tutorial-item">
+                    <h3>四、jiuip</h3>
+                    <p class="price-info"><strong>价格：</strong>超低价格（博主超低价格出售）</p>
+                    <p class="note"><strong>全新平台、全新 ip</strong></p>
+                    
+                    <h4>🎯 平台特色</h4>
+                    <p>平台 ip 目前主要是天翼云、移动云、阿里云、住宅 IP 等，带宽自己选择。因为全新平台，全新 ip，ip 的网速和纯净度都很不错，用户反馈良好，目前 ip 数量和地区持续在补充中。</p>
+                    
+                    <h4>🔗 注册登陆网址</h4>
+                    <p class="link"><a href="https://jiuip.com/#/r?p=admin" target="_blank">https://jiuip.com/#/r?p=admin</a></p>
+                    
+                    <h4>📝 使用流程</h4>
+                    <div class="tutorial-image">
+                        <img src="images/11.png">
+                    </div>
+                    <ol>
+                        <li><strong>注册、完善信息并登陆</strong></li>
+                    </ol>
+                    <div class="tutorial-image">
+                        <img src="images/12.png">
+                    </div>
+                    <ol start="2">
+                        <li><strong>购买代理：</strong>购买代理--选择游戏类别（随机选择或定向选择都可以，不影响）--套餐分组--协议及地区等，然后在我的代理里能查看到所购买的 ip 信息，导出即可。</li>
+                    </ol>
+                </div>
+
+                <!-- 教程 5：优众平台 -->
+                <div class="tutorial-item">
+                    <h3>五、优众平台</h3>
+                    <p class="price-info"><strong>价格：</strong>一手资源，超低价格打折出售</p>
+                    
+                    <h4>🎯 平台特色</h4>
+                    <p>支持 sk5 跟 L2 协议，其中 L2 协议支持稳定大流量业务（电信 B 区和 C 区），ip 有家宽住宅 IP 和云 ip，用户自行选择，性价比超高，一手资源，超低价格，支持免费调换。</p>
+                    
+                    <h4>🔗 登录网址</h4>
+                    <p class="warning-text"><strong>邀请码不要更改，默认即可，不然无法开通测试、更改低价以及更多优惠政策</strong></p>
+                    <p class="link"><a href="https://sk5ip.cn/views/login.html#?promotionCode=993CC35598B543A4B8974B12A28BDF67" target="_blank">https://sk5ip.cn/views/login.html#?promotionCode=993CC35598B543A4B8974B12A28BDF67</a></p>
+                    
+                    <h4>📝 使用流程</h4>
+                    <div class="tutorial-image">
+                        <img src="images/13.png">
+                    </div>
+                    <ol>
+                        <li><strong>注册、完善信息并登录</strong></li>
+                    </ol>
+                    <div class="tutorial-image">
+                        <img src="images/14.png">
+                    </div>
+                    <ol start="2">
+                        <li><strong>自选配置：</strong>自选协议，项目（可搜索，也可随机选择，不影响）、线路（根据线路提示结合业务自选）<br/><strong>提示：</strong>sk5 协议有腾讯云 IP 和家宽 IP，L2 协议有超高带宽（电信 B 区和 C 区），大家根据提示以及自己需求自主选择</li>
+                    </ol>
+                    <div class="tutorial-image">
+                        <img src="images/15.png">
+                    </div>
+                    <ol start="3">
+                        <li><strong>账户充值：</strong>区分协议充值（平台代理以金币购买，充值金额与金币之间有比例）</li>
+                    </ol>
+                </div>
+
+                <!-- 教程 6：沧海 IP -->
+                <div class="tutorial-item">
+                    <h3>六、沧海 IP</h3>
+                    <p class="note"><strong>一区、三区、四区、六区等均反馈不错，大家根据自己业务自行免费测试匹配</strong></p>
+                    
+                    <h4>🔗 登录网址</h4>
+                    <p class="link"><a href="http://www.canghaiip.com/#/register?invitation=adminip&shareid=1697" target="_blank">http://www.canghaiip.com/#/register?invitation=adminip&shareid=1697</a></p>
+                    
+                    <h4>📝 使用流程</h4>
+                    <div class="tutorial-image">
+                        <img src="images/16.png">
+                    </div>
+                    <ol>
+                        <li><strong>注册登录：</strong>登录并注册，根据带宽不同，选择各个区，选择项目类别，地区等，然后测试购买等，非常简单，IP 也支持免费测试，免费调换。</li>
+                    </ol>
+                </div>
+
+                <!-- 教程 7：极云 IP -->
+                <div class="tutorial-item">
+                    <h3>七、极云 IP</h3>
+                    <p class="note"><strong>长效静态及定制专享 IP</strong></p>
+                    
+                    <h4>🔗 登陆网址</h4>
+                    <p class="link"><a href="http://www.jiyunip.com/login/index/index/code/5589/b/247.html" target="_blank">http://www.jiyunip.com/login/index/index/code/5589/b/247.html</a></p>
+                    
+                    <h4>📝 使用流程</h4>
+                    <div class="tutorial-image">
+                        <img src="images/17.png">
+                    </div>
+                    <ol>
+                        <li><strong>注册登录：</strong>登录并注册，然后根据业务选择，选择项目类别，地区等，然后测试购买等，非常简单，IP 也支持免费测试，免费调换。</li>
+                    </ol>
+                    <p class="warning-text"><strong>特别须知：</strong>充值的时候尤其需要注意充到对应的 IP 区（如静态节点跟住宅节点是分开充值，不要搞混了）</p>
+                </div>
+
+                <!-- 教程 8：无双平台 -->
+                <div class="tutorial-item">
+                    <h3>八、海外代理 IP（无双平台）</h3>
+                    <p class="price-info"><strong>价格区间：</strong>云 IP 7 元/条，住宅 15 元/条，均为行业超低价</p>
+                    
+                    <h4>🔗 登录网址</h4>
+                    <p class="link"><a href="https://easybr.6nn.net/" target="_blank">https://easybr.6nn.net/</a></p>
+                    
+                    <h4>📝 使用流程</h4>
+                    <div class="tutorial-image">
+                        <img src="images/18.png">
+                    </div>
+                    <ol>
+                        <li><strong>注册并登录平台</strong>
+                            <div class="tutorial-image">
+                                <img src="images/19.png">
+                            </div>
+                            <div class="tutorial-image">
+                                <img src="images/20.png">
+                            </div>
+                        </li>
+                        <li><strong>2、</strong></li>
+                        <li><strong>购买代理：</strong>登录 IP 后台，选择《系统应用》--《购买代理》
+                            <ul>
+                                <li>《游戏》栏可搜索，搜索后选择项目即可，此处若无搜索结果，也可随机选择项目或者搜索类似项目均可，大部分的项目 IP 均是通用的，没有影响。</li>
+                                <li>《精选/优选》为云 IP，价格相对便宜，量大地区可选择，该 IP 纯净度也能满足绝大部分业务要求，大家可以自行免费测试。</li>
+                                <li>《住宅（推荐）》为住宅 IP，纯净度相对较高。</li>
+                                <li>用户可自行选择《精选/优选》、《住宅（推荐）》两个资源，其余两个资源还在优化中，性价比不佳，建议暂不选择。</li>
+                                <li>《协议》和《协议选项》默认选项即可。</li>
+                            </ul>
+                            <div class="tutorial-image">
+                                <img src="images/21.png">
+                            </div>
+                        </li>
+                        <li><strong>3、以上均支持免费测试，满意再购买，在《购买代理》栏设置好以后可选择试用。</strong>
+                            <div class="tutorial-image">
+                                <img src="images/22.png">
+                            </div>
+                        </li>
+                        <li><strong>4、续费等问题，《日志管理》，如下所示，自行操作即可。</strong></li>
+                    </ol>
+                </div>
+
+                <!-- 教程 9：55 游 IP 平台 -->
+                <div class="tutorial-item">
+                    <h3>九、55 游 IP 平台</h3>
+                    <p class="note"><strong>全网第一家游戏 ip 真隔离!</strong></p>
+                    
+                    <h4>🔗 登录网址</h4>
+                    <p class="link"><a href="https://55u.net/#/login?c=1234" target="_blank">https://55u.net/#/login?c=1234</a></p>
+                    
+                    <div class="tutorial-image">
+                        <img src="images/23.png">
+                    </div>
+                    
+                    <h4>🎯 平台特色</h4>
+                    <ol>
+                        <li>支持原生住宅（双 isp）、原生 IP（本土 IP）、云服务器（云 IP）等三种类型 IP。</li>
+                        <li>全网唯一一家能做到多地区隔离，用户购买 ip 节点时，需选择好游戏及地区。因为 ip 做了隔离，购买什么游戏就只能进这游戏。</li>
+                        <li>独家打造中转平台，凡在 55 游购买节点即可免费使用，用户只需自行购买云服务器，中转功能非常强大，简单易学，教程请到端口转发下列查询。</li>
+                        <li><strong>转发说明：</strong>转发是用户自己购买服务器来添加中转，让节点降低延时，转发系统完全免费给用户使用。具体使用教程请到转发端口查看。</li>
+                        <li>IP 支持免费测试，免费调换等，价格同行业最低，性价比超高</li>
+                    </ol>
+                </div>
+
+                <!-- 教程 10：985 海外代理 -->
+                <div class="tutorial-item">
+                    <h3>十、985 海外代理</h3>
+                    <p class="note"><strong>超高纯净度跨境专线、原生直连 ip，适合对 ip 网络要求非常高的业务场景</strong></p>
+                    
+                    <h4>🔗 登陆网址</h4>
+                    <p class="link"><a href="https://www.985proxy.com/?QYMWI5" target="_blank">https://www.985proxy.com/?QYMWI5</a></p>
+                    
+                    <div class="tutorial-image">
+                        <img src="images/24.png">
+                    </div>
+                    
+                    <h4>💰 价格说明</h4>
+                    <p>该平台 ip 线上价贵，大家可登陆查看所需要的地区和 ip 类别，然后联系博主购买对应的 ip，能申请到对应的折扣及降价。降价幅度较低，肯定满意的。</p>
+                </div>
+
+                <!-- 总结 -->
+                <div class="tutorial-summary">
+                    <h3>📊 整体总结</h3>
+                    <p><strong>鲸云平台：</strong>的大流量套餐（定制 A 区和 B 区）网速较高，A 区网速大于 B 区，用户实测大流量业务网络能保障，家庭 B 区用户 PC 跟手机端 ip 同步，用户反馈良好，需求巨大。</p>
+                    <p><strong>天行、优众、沧海等平台：</strong>性价比都很高，因落地设备及本地网络问题，IP 的使用体验有差异，但基本上全产业覆盖，ip 非常稳定，大小流量都能满足，也是大部分用户长选择的平台。</p>
+                    <p><strong>Jiuip 平台：</strong>属新平台，全新 ip，网速及纯净度很不错，用户反馈良好，ip 数量还在持续更新中，请放心使用。</p>
+                    <p><strong>奔富：</strong>为纯住宅 ip，可自选带宽，且协议较多，纯净度高。</p>
+                    <p><strong>无双及 55 游：</strong>主要做海外 IP，性价比均不错，55 游原生住宅的 IP 质量较高，无双平台 IP 性价比很不错（价格全网最低），基本上跨境业务都能满足。</p>
                 </div>
             </div>
         </div>
@@ -518,10 +1184,40 @@
                 
                 // Filter platform cards
                 document.querySelectorAll('.platform-card').forEach(card => {
-                    if (category === 'all' || card.dataset.category === category) {
-                        card.style.display = 'block';
+                    const cardCategories = card.dataset.category.split(' ');
+                    
+                    if (category === 'all') {
+                        // "全部平台" tab: show only individual platform cards (those with "all" category)
+                        // Hide summary cards (those with "-summary" in their category)
+                        if (cardCategories.includes('all')) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    } else if (category === 'overseas') {
+                        // "海外代理" tab: show summary card AND individual cards with "overseas" category
+                        const summaryCategory = category + '-summary';
+                        if (cardCategories.includes(summaryCategory) || cardCategories.includes(category)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    } else if (category === 'tutorials') {
+                        // "各平台使用详细教程" tab: show only tutorials summary card
+                        const summaryCategory = category + '-summary';
+                        if (cardCategories.includes(summaryCategory)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
                     } else {
-                        card.style.display = 'none';
+                        // Other category tabs: show only summary card for this category
+                        const summaryCategory = category + '-summary';
+                        if (cardCategories.includes(summaryCategory)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
                     }
                 });
             });
