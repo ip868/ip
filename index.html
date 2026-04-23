@@ -124,11 +124,13 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .intro-section .platform-tag:hover {
+        .platform-tag:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
         }
 
         /* Navigation Tabs */
@@ -453,49 +455,6 @@
             border: 2px solid #e9ecef;
         }
 
-        /* Floating Menu */
-        .floating-menu {
-            position: fixed;
-            top: 50%;
-            right: 30px;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        .floating-menu ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .floating-menu li {
-            margin-bottom: 15px;
-        }
-
-        .floating-menu a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 15px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .floating-menu a:hover {
-            transform: translateX(-10px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -526,16 +485,116 @@
             display: flex;
         }
 
-        /* Responsive for floating menu */
+        /* Fixed Top Navigation Bar */
+        .top-nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px 0;
+            display: none;
+        }
+
+        .top-nav-bar.show {
+            display: block;
+        }
+
+        .top-nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-nav-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .top-nav-link:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
         @media (max-width: 768px) {
-            .floating-menu {
-                right: 15px;
-                padding: 10px;
+            .top-nav-content {
+                flex-wrap: wrap;
+                gap: 8px;
             }
-            
-            .floating-menu a {
-                padding: 8px 12px;
-                font-size: 0.9rem;
+
+            .top-nav-link {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+        }
+
+        /* Floating Navigation */
+        .floating-nav {
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 10px 8px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .floating-nav:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-50%) translateX(-3px);
+        }
+
+        .floating-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 12px;
+            margin: 3px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            min-width: 50px;
+        }
+
+        .floating-nav-item:hover {
+            transform: translateX(-3px);
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .floating-nav-item i {
+            font-size: 1.2rem;
+            margin-bottom: 2px;
+        }
+
+        .floating-nav-item span {
+            font-size: 0.65rem;
+            text-align: center;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* Mobile responsive for floating nav */
+        @media (max-width: 768px) {
+            .floating-nav {
+                display: none;
             }
         }
 
@@ -607,7 +666,7 @@
 <body>
     <div class="container">
         <!-- Header -->
-        <div class="header" id="home">
+        <div class="header" id="header">
             <h1>🌐 代理 IP 平台导航</h1>
             <p class="subtitle">国内主流代理 IP 服务平台 - 稳定·正规·高性价比</p>
             <div class="contact-info">
@@ -626,17 +685,17 @@
                 </div>
 
                 <p><strong>十大主流 IP：</strong></p>
-                <div class="platforms-list">
-                    <div class="platform-tag">☁️ 天行 IP</div>
-                    <div class="platform-tag">🐋 鲸云 IP</div>
-                    <div class="platform-tag">🏠 奔富 IP</div>
-                    <div class="platform-tag">🔥 jiuip</div>
-                    <div class="platform-tag">🌊 沧海 IP</div>
-                    <div class="platform-tag">⭐ 优众 IP</div>
-                    <div class="platform-tag">⚡ 极云 IP</div>
-                    <div class="platform-tag">🌍 无双 IP</div>
-                    <div class="platform-tag">🎮 55 游 IP</div>
-                    <div class="platform-tag">🎓 985 海外代理 IP</div>
+                <div class="platforms-list" id="platforms-list">
+                    <div class="platform-tag" data-target="platform-tianxing">☁️ 天行 IP</div>
+                    <div class="platform-tag" data-target="platform-jingyun">🐋 鲸云 IP</div>
+                    <div class="platform-tag" data-target="platform-benfu">🏠 奔富 IP</div>
+                    <div class="platform-tag" data-target="platform-jiuip">🔥 jiuip</div>
+                    <div class="platform-tag" data-target="platform-canghai">🌊 沧海 IP</div>
+                    <div class="platform-tag" data-target="platform-youzhong">⭐ 优众 IP</div>
+                    <div class="platform-tag" data-target="platform-jiyun">⚡ 极云 IP</div>
+                    <div class="platform-tag" data-target="platform-wushuang">🌍 无双 IP</div>
+                    <div class="platform-tag" data-target="platform-55you">🎮 55 游 IP</div>
+                    <div class="platform-tag" data-target="platform-985">🎓 985 海外代理 IP</div>
                 </div>
 
                 <p style="margin-top: 20px; text-align: center; font-size: 1.1rem; color: #667eea;">
@@ -658,9 +717,9 @@
         </div>
 
         <!-- Platforms Grid -->
-        <div class="platforms-grid" id="platforms">
+        <div class="platforms-grid">
             <!-- 天行 IP -->
-            <div class="platform-card" data-category="all domestic">
+            <div class="platform-card" id="platform-tianxing" data-category="all domestic">
                 <h3>☁️ 天行 IP</h3>
                 <div class="price-tag">💰 线上价 15 元/月/条，渠道折后价 4 折起售 6 元/月/条</div>
                 <ul class="features">
@@ -675,7 +734,7 @@
             </div>
 
             <!-- 鲸云 IP -->
-            <div class="platform-card" data-category="all high-traffic">
+            <div class="platform-card" id="platform-jingyun" data-category="all high-traffic">
                 <h3>🐋 鲸云 IP</h3>
                 <div class="price-tag">💰 家庭住宅 6 元/条，超高带宽定制住宅 IP 18-30 元/条</div>
                 <ul class="features">
@@ -691,7 +750,7 @@
             </div>
 
             <!-- 奔富 IP -->
-            <div class="platform-card" data-category="all residential">
+            <div class="platform-card" id="platform-benfu" data-category="all residential">
                 <h3>🏠 奔富 IP</h3>
                 <div class="price-tag">💰 纯住宅 IP，最低 2 元/条/月起</div>
                 <ul class="features">
@@ -707,7 +766,7 @@
             </div>
 
             <!-- jiuip -->
-            <div class="platform-card" data-category="all domestic">
+            <div class="platform-card" id="platform-jiuip" data-category="all domestic">
                 <h3>🔥 jiuip</h3>
                 <div class="price-tag">💰 全新平台 全新 IP 超高纯净度住宅 IP 超低价格 3 元/月</div>
                 <ul class="features">
@@ -718,11 +777,11 @@
                     <li>自选带宽 免费测试</li>
                     <li>全新平台 IP 池数量持续更新中</li>
                 </ul>
-                <a href="#" class="btn-visit" target="_blank">🚀 立即访问</a>
+                <a href="https://jiuip.com/#/r?p=admin2" class="btn-visit" target="_blank">🚀 立即访问</a>
             </div>
 
             <!-- 沧海 IP -->
-            <div class="platform-card" data-category="all domestic l2">
+            <div class="platform-card" id="platform-canghai" data-category="all domestic l2">
                 <h3>🌊 沧海 IP</h3>
                 <div class="price-tag">💰 高性价比 带宽可选 超低价格</div>
                 <ul class="features">
@@ -738,7 +797,7 @@
             </div>
 
             <!-- 优众 IP -->
-            <div class="platform-card" data-category="all domestic">
+            <div class="platform-card" id="platform-youzhong" data-category="all domestic">
                 <h3>⭐ 优众 IP</h3>
                 <div class="price-tag">💰 超低价格 6 元/月/条起售</div>
                 <ul class="features">
@@ -752,7 +811,7 @@
             </div>
 
             <!-- 极云 IP -->
-            <div class="platform-card" data-category="all domestic">
+            <div class="platform-card" id="platform-jiyun" data-category="all domestic">
                 <h3>⚡ 极云 IP</h3>
                 <div class="price-tag">💰 长效静态 住宅 IP 6 元/月/条</div>
                 <ul class="features">
@@ -767,8 +826,8 @@
             </div>
 
             <!-- 无双 IP -->
-            <div class="platform-card" data-category="all overseas">
-                <h3>� 无双 IP</h3>
+            <div class="platform-card" id="platform-wushuang" data-category="all overseas">
+                <h3>🌍 无双 IP</h3>
                 <div class="price-tag">💰 云 IP 7 元/住宅 15 元</div>
                 <ul class="features">
                     <li>主做海外代理 IP</li>
@@ -777,13 +836,14 @@
                     <li>覆盖海外社媒、游戏、电商、web3 等场景</li>
                     <li>支持免费测试和调换</li>
                     <li>性价比非常高</li>
+                    <li>该平台 IP 基本上能满足绝大部分海外场景业务需求，而且价格便宜</li>
                     <li>适合对 IP 纯净度要求一般但追求低价 IP 的业务</li>
                 </ul>
                 <a href="https://easybr.6nn.net/" class="btn-visit" target="_blank">🚀 立即访问</a>
             </div>
 
             <!-- 55 游 -->
-            <div class="platform-card" data-category="all overseas">
+            <div class="platform-card" id="platform-55you" data-category="all overseas">
                 <h3>🎮 55 游 [高质量游戏 IP]</h3>
                 <div class="price-tag">💰 原生住宅 24 元/条/月 原生 IP 12 元/条/月</div>
                 <ul class="features">
@@ -800,7 +860,7 @@
             </div>
 
             <!-- 985 海外代理 IP -->
-            <div class="platform-card" data-category="all overseas">
+            <div class="platform-card" id="platform-985" data-category="all overseas">
                 <h3>🎓 985 海外代理</h3>
                 <div class="price-tag">💰 原生住宅直连 IP（超高纯净度）联系博主享受超低折扣价</div>
                 <ul class="features">
@@ -843,13 +903,19 @@
 
             <!-- 大流量超高带宽 IP 汇总卡片 -->
             <div class="platform-card" data-category="high-traffic-summary">
-                <h3>🐋 大流量超高带宽 IP</h3>
-                <div class="price-tag">💰 可视频等大流量业务，最低 8 元/月/条</div>
+                <h3>⚡ 大流量超高带宽 IP</h3>
+                <div class="price-tag">💰 可视频等大流量业务，最低 6 元/月/条</div>
                 <ul class="features">
-                    <li>IP 特点：独享 IP 带宽高，网速相对较为流畅</li>
-                    <li>适合对 IP 网络网速要求比较高的业务场景</li>
-                    <li>价格各平台略有差异，最低 8 元/月/条</li>
-                    <li>可选平台：<br>鲸鱼定制 A/B 区（定制 A 区：50-200M 带宽，定制 B 区：10-20M 带宽）A 区为 socks5 协议，B 区支持 sock5 与 L2 双协议，此两区线上价高，注册后需联系博主改价，A 区 30/条，B 区 20/条，住宅 IP 网络还不错<br>jiuip：新平台网络较好，自选带宽，实测 5M 及以上视频类业务较为流畅，而且价格不贵，支持 socks5 与 L2 等协议<br>优众 L2 静态（电信 B/C 区）<br>天行、沧海、极云的住宅节点，J 节点带宽大于 N 节点，也有高带宽 L2 协议的 IP，大家可在平台内查看对应的介绍<br>奔富 20M 及视频大带宽等，支持 sock5 与 L2 等协议</li>
+                    <li><strong>推荐平台：</strong><br>
+                        <strong>鲸云：</strong>定制 A/B 区（定制 A 区：50-200M 带宽，定制 B 区：10-20M 带宽）A 区为 socks5 协议，B 区支持 sock5 与 L2 双协议，此两区线上价高，注册后需联系博主改价，A 区 30/条，B 区 20/条，住宅 IP 网络还不错<br>
+                        <strong>jiuip：</strong>新平台网络较好，自选带宽，实测 5M 及以上视频类业务较为流畅，而且价格不贵，支持 socks5 与 L2 等协议<br>
+                        <strong>优众：</strong>L2 静态（电信 B/C 区）<br>
+                        <strong>天行、沧海、极云的住宅节点：</strong>J 节点带宽大于 N 节点，也有高带宽 L2 协议的 IP，大家可在平台内查看对应的介绍<br>
+                        <strong>奔富：</strong>20M 及视频大带宽等（支持 sock5 与 L2 等协议）
+                    </li>
+                    <li><strong>价格：</strong>各平台略有差异，最低 6 元/月/条</li>
+                    <li><strong>IP 特点：</strong>独享 IP 带宽高，网速相对较为流畅</li>
+                    <li><strong>适用场景：</strong>适合对 IP 网络网速要求比较高的业务场景</li>
                 </ul>
             </div>
 
@@ -868,12 +934,17 @@
         </div>
 
         <!-- Category Guide -->
-        <div class="category-section">
+        <div class="category-section" id="category-guide">
             <h2>📋 结合业务类型选择建议</h2>
             <div class="category-content">
                 <div class="category-item">
                     <h4>🔹 长效静态 IP</h4>
-                    <p><strong>推荐平台：</strong>天行、沧海（1 区 sock5 协议、6 区 L2 协议）、优众、jiuip 等</p>
+                    <p><strong>推荐平台：</strong><br>
+                        天行<br>
+                        沧海（1 区 sock5 协议、6 区 L2 协议）<br>
+                        优众<br>
+                        jiuip 等
+                    </p>
                     <p><strong>价格：</strong>渠道价 6 元/月/条</p>
                     <p><strong>IP 特点：</strong>家庭宽带 IP 及云 IP 为主（绝大部分 IP 均比较干净，纯净度都很不错，纯净度可检测，不满意直接平台内免费调换）</p>
                     <p><strong>稳定性：</strong>IP 较稳定，不跳，长期保持不变</p>
@@ -883,7 +954,13 @@
 
                 <div class="category-item">
                     <h4>🏠 住宅 IP</h4>
-                    <p><strong>推荐平台：</strong>天行（J、N 节点，带宽 J 节点高于 N 节点）、沧海（3、4、7 区）、鲸云（家庭 A/B 区，定制 A/B 区）、奔富（所有 G 节点）、jiuip（住宅 IP，自选带宽）等</p>
+                    <p><strong>推荐平台：</strong><br>
+                        天行（J、N 节点，带宽 J 节点高于 N 节点）<br>
+                        沧海（3、4、7 区）<br>
+                        鲸云（家庭 A/B 区，定制 A/B 区）<br>
+                        奔富（所有 G 节点）<br>
+                        jiuip（住宅 IP，自选带宽）等
+                    </p>
                     <p><strong>价格：</strong>自选带宽，按带宽高低价格有差异，最低 2 元/条</p>
                     <p><strong>IP 特点：</strong>纯住宅 IP，纯净度高，模拟家庭真实网络最接近</p>
                     <p><strong>稳定性：</strong>部分住宅 IP 可能会跳，但一般只是小区域内跳动，属正常现象</p>
@@ -892,15 +969,28 @@
 
                 <div class="category-item">
                     <h4>⚡ 大流量超高带宽 IP</h4>
-                    <p><strong>推荐平台：</strong>鲸云定制 A/B 区（定制 A 区：50-200M 带宽，定制 B 区：10-20M 带宽）A 区为 socks5 协议，B 区支持 sock5 与 L2 双协议，此两区线上价高，注册后需联系博主改价，A 区 30/条，B 区 20/条，住宅 IP 网络还不错、jiuip（新平台网络较好，自选带宽，实测 5M 及以上视频类业务较为流畅，而且价格不贵，支持 socks5 与 L2 等协议）、优众 L2 静态（电信 B/C 区）、天行、沧海、极云的住宅节点（J 节点带宽大于 N 节点，也有高带宽 L2 协议的 IP，大家可在平台内查看对应的介绍）、奔富 20M 及视频大带宽等（支持 sock5 与 L2 等协议）</p>
-                    <p><strong>价格：</strong>各平台略有差异，最低 8 元/月/条</p>
+                    <p><strong>推荐平台：</strong><br>
+                        <strong>鲸云：</strong>定制 A/B 区（定制 A 区：50-200M 带宽，定制 B 区：10-20M 带宽）A 区为 socks5 协议，B 区支持 sock5 与 L2 双协议，此两区线上价高，注册后需联系博主改价，A 区 30/条，B 区 20/条，住宅 IP 网络还不错<br>
+                        <strong>jiuip：</strong>新平台网络较好，自选带宽，实测 5M 及以上视频类业务较为流畅，而且价格不贵，支持 socks5 与 L2 等协议<br>
+                        <strong>优众：</strong>L2 静态（电信 B/C 区）<br>
+                        <strong>天行、沧海、极云的住宅节点：</strong>J 节点带宽大于 N 节点，也有高带宽 L2 协议的 IP，大家可在平台内查看对应的介绍<br>
+                        <strong>奔富：</strong>20M 及视频大带宽等（支持 sock5 与 L2 等协议）
+                    </p>
+                    <p><strong>价格：</strong>各平台略有差异，最低 6 元/月/条</p>
                     <p><strong>IP 特点：</strong>独享 IP 带宽高，网速相对较为流畅</p>
                     <p><strong>适用场景：</strong>适合对 IP 网络网速要求比较高的业务场景</p>
                 </div>
 
                 <div class="category-item">
                     <h4>🔌 L2tp 协议 IP</h4>
-                    <p><strong>推荐平台：</strong>奔富 L2、天行 L2、鲸云 B 区、jiuip、优众 L2、沧海 6/7 区等</p>
+                    <p><strong>推荐平台：</strong><br>
+                        奔富 L2<br>
+                        天行 L2<br>
+                        鲸云 B 区<br>
+                        jiuip<br>
+                        优众 L2<br>
+                        沧海 6/7 区 等
+                    </p>
                     <p><strong>特点：</strong>基本上以上平台均支持 L2tp 协议的 IP，大家根据自己带宽及网络的需求（静态/住宅/带宽高低等）自行查看对应平台</p>
                     <p><strong>特殊场景：</strong>另若有微信、QQ 等社交类场景或需微信 QQ 登陆类场景，因运营商审核较为严格，且对 IP 要求比较高，博主单列了动感网络 IP 平台，网络和纯净度均不错，供大家使用，注册后联系博主更改低价。</p>
                     <p><strong>价格：</strong>结合软路由等工具使用，根据带宽需求选择</p>
@@ -924,7 +1014,7 @@
                 </div>
 
                 <!-- 教程 1：天行平台 -->
-                <div class="tutorial-item">
+                <div class="tutorial-item" id="tutorial-tianxing">
                     <h3>一、国内长效静态代理（天行平台）</h3>
                     <p class="price-info"><strong>价格：</strong>6 元/条/月</p>
                     <p class="ip-type"><strong>IP 类型：</strong>静态代理</p>
@@ -970,7 +1060,7 @@
                 </div>
 
                 <!-- 教程 2：奔富平台 -->
-                <div class="tutorial-item">
+                <div class="tutorial-item" id="tutorial-benfu">
                     <h3>二、国内代理链接：奔富平台</h3>
                     <p class="price-info"><strong>价格：</strong>自选带宽高低，打折出售，最低 2 元/条</p>
                     
@@ -1011,7 +1101,7 @@
                 </div>
 
                 <!-- 教程 3：鲸云平台 -->
-                <div class="tutorial-item">
+                <div class="tutorial-item" id="tutorial-jingyun">
                     <h3>三、鲸云平台</h3>
                     <p class="price-info"><strong>渠道价格：</strong>定制 A 区 30 元/条，B 区 20 元/条，家庭 A/B 区 6 元/条</p>
                     <p class="note"><strong>大流量套餐网络较好，不限速，住宅代理（部分住宅可能会跳，部分不跳，用户自行测试）</strong></p>
@@ -1033,7 +1123,7 @@
                 </div>
 
                 <!-- 教程 4：jiuip -->
-                <div class="tutorial-item">
+                <div class="tutorial-item" id="tutorial-jiuip">
                     <h3>四、jiuip</h3>
                     <p class="price-info"><strong>价格：</strong>超低价格（博主超低价格出售）</p>
                     <p class="note"><strong>全新平台、全新 ip</strong></p>
@@ -1060,7 +1150,7 @@
                 </div>
 
                 <!-- 教程 5：优众平台 -->
-                <div class="tutorial-item">
+                <div class="tutorial-item" id="tutorial-youzhong">
                     <h3>五、优众平台</h3>
                     <p class="price-info"><strong>价格：</strong>一手资源，超低价格打折出售</p>
                     
@@ -1093,7 +1183,7 @@
                 </div>
 
                 <!-- 教程 6：沧海 IP -->
-                <div class="tutorial-item">
+                <div class="tutorial-item" id="tutorial-canghai">
                     <h3>六、沧海 IP</h3>
                     <p class="note"><strong>一区、三区、四区、六区等均反馈不错，大家根据自己业务自行免费测试匹配</strong></p>
                     
@@ -1110,7 +1200,7 @@
                 </div>
 
                 <!-- 教程 7：极云 IP -->
-                <div class="tutorial-item">
+                <div class="tutorial-item" id="tutorial-jiyun">
                     <h3>七、极云 IP</h3>
                     <p class="note"><strong>长效静态及定制专享 IP</strong></p>
                     
@@ -1128,7 +1218,7 @@
                 </div>
 
                 <!-- 教程 8：无双平台 -->
-                <div class="tutorial-item">
+                <div class="tutorial-item" id="tutorial-wushuang">
                     <h3>八、海外代理 IP（无双平台）</h3>
                     <p class="price-info"><strong>价格区间：</strong>云 IP 7 元/条，住宅 15 元/条，均为行业超低价</p>
                     
@@ -1171,7 +1261,7 @@
                 </div>
 
                 <!-- 教程 9：55 游 IP 平台 -->
-                <div class="tutorial-item">
+                <div class="tutorial-item" id="tutorial-55you">
                     <h3>九、55 游 IP 平台</h3>
                     <p class="note"><strong>全网第一家游戏 ip 真隔离!</strong></p>
                     
@@ -1193,7 +1283,7 @@
                 </div>
 
                 <!-- 教程 10：985 海外代理 -->
-                <div class="tutorial-item">
+                <div class="tutorial-item" id="tutorial-985">
                     <h3>十、985 海外代理</h3>
                     <p class="note"><strong>超高纯净度跨境专线、原生直连 ip，适合对 ip 网络要求非常高的业务场景</strong></p>
                     
@@ -1209,7 +1299,7 @@
                 </div>
 
                 <!-- 总结 -->
-                <div class="tutorial-summary">
+                <div class="tutorial-summary" id="summary">
                     <h3>📊 整体总结</h3>
                     <p><strong>鲸云平台：</strong>的大流量套餐（定制 A 区和 B 区）网速较高，A 区网速大于 B 区，用户实测大流量业务网络能保障，家庭 B 区用户 PC 跟手机端 ip 同步，用户反馈良好，需求巨大。</p>
                     <p><strong>天行、优众、沧海等平台：</strong>性价比都很高，因落地设备及本地网络问题，IP 的使用体验有差异，但基本上全产业覆盖，ip 非常稳定，大小流量都能满足，也是大部分用户长选择的平台。</p>
@@ -1247,7 +1337,7 @@
         </div>
 
         <!-- Footer -->
-        <div class="footer" id="contact">
+        <div class="footer">
             <p> 联系方式：QQ 2284069503 / 3831729631 | 微信公众号：ip456228</p>
             <p>💰 所有平台均享有折扣价格，量大可联系客服改价</p>
             <p>🎯 诚信合作，永不失联</p>
@@ -1310,29 +1400,57 @@
         });
     </script>
 
-    <!-- Floating Menu -->
-        <div class="floating-menu">
-            <ul>
-                <li><a href="#home">🏠 首页</a></li>
-                <li><a href="#platforms">📋 平台导航</a></li>
-                <li><a href="#tutorials">📚 教程中心</a></li>
-                <li><a href="#contact">💬 联系我们</a></li>
-            </ul>
-        </div>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop" title="返回顶部">↑</a>
 
-        <!-- Back to Top Button -->
-        <a href="#" class="back-to-top" id="backToTop" title="返回顶部">↑</a>
+    <!-- Fixed Top Navigation Bar -->
+    <div class="top-nav-bar" id="topNavBar">
+        <div class="top-nav-content">
+            <a href="#header" class="top-nav-link">🏠 首页</a>
+            <a href="#platforms-list" class="top-nav-link">📋 平台导航</a>
+            <a href="#category-guide" class="top-nav-link">💡 业务建议</a>
+            <a href="#tutorials" class="top-nav-link">📚 教程中心</a>
+            <a href="#summary" class="top-nav-link">📊 整体总结</a>
+        </div>
+    </div>
+
+    <!-- Floating Navigation -->
+    <div class="floating-nav">
+        <a href="#header" class="floating-nav-item">
+            <i>🏠</i>
+            <span>首页</span>
+        </a>
+        <a href="#platforms-list" class="floating-nav-item">
+            <i>📋</i>
+            <span>平台导航</span>
+        </a>
+        <a href="#category-guide" class="floating-nav-item">
+            <i>💡</i>
+            <span>业务建议</span>
+        </a>
+        <a href="#tutorials" class="floating-nav-item">
+            <i>📚</i>
+            <span>教程中心</span>
+        </a>
+        <a href="#summary" class="floating-nav-item">
+            <i>📊</i>
+            <span>整体总结</span>
+        </a>
+    </div>
 
     <script>
         // Back to top button functionality
         const backToTop = document.getElementById('backToTop');
+        const topNavBar = document.getElementById('topNavBar');
         
         // Show/hide button on scroll
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 backToTop.classList.add('show');
+                topNavBar.classList.add('show');
             } else {
                 backToTop.classList.remove('show');
+                topNavBar.classList.remove('show');
             }
         });
         
@@ -1344,18 +1462,46 @@
                 behavior: 'smooth'
             });
         });
-        
-        // Smooth scroll for floating menu links
-        document.querySelectorAll('.floating-menu a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
+
+        // Platform tag click to scroll to tutorial
+        document.querySelectorAll('.platform-tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 20,
-                        behavior: 'smooth'
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Floating navigation smooth scroll
+        document.querySelectorAll('.floating-nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Top navigation bar smooth scroll
+        document.querySelectorAll('.top-nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
             });
